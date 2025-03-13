@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Muhammad Awais - CMD Portfolio</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="sidebar">
+        <h3>Commands</h3>
+        <ul>
+          <li>about <button onclick="executeCommand('about')">Run</button></li>
+          <li>
+            education <button onclick="executeCommand('education')">Run</button>
+          </li>
+          <li>
+            projects <button onclick="executeCommand('projects')">Run</button>
+          </li>
+          <li>
+            skills <button onclick="executeCommand('skills')">Run</button>
+          </li>
+          <li>clear <button onclick="executeCommand('clear')">Run</button></li>
+          <li>help <button onclick="executeCommand('help')">Run</button></li>
+        </ul>
+      </div>
+      <div class="terminal-container">
+        <div class="terminal-header">
+          <span class="header-title">Muhammad Awais - Terminal Portfolio</span>
+          <div class="window-controls">
+            <span class="control minimize">-</span>
+            <span class="control maximize">□</span>
+            <span class="control close">x</span>
+          </div>
+        </div>
+        <div class="terminal-body">
+          <div class="output" id="output">
+            <p>Type a command or use the sidebar buttons.</p>
+          </div>
+          <div class="input-area">
+            <span class="prompt">Muhammad Awais\Portfolio></span>
+            <input
+              type="text"
+              id="commandInput"
+              autofocus
+              placeholder="Type a command..."
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
