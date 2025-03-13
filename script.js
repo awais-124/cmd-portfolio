@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
       case 'about':
         output.innerHTML += `
                     <p>MUHAMMAD AWAIS</p>
-                    <p>Email: awaits14940@gmail.com | Mobile: +923269872844</p>
+                    <p>Email: awais14940@gmail.com | Mobile: +923269872844</p>
                     <p>Residence: Rawalpindi, Pakistan</p>
                     <p>Links: <a href="https://linkedin.com/in/muhammad-awais-124" target="_blank">LinkedIn</a> | <a href="https://github.com/awais-124" target="_blank">GitHub</a></p>
                     <p>Assalam u Alaikum (Greetings)! I'm Muhammad Awais, a final-year Computer Science student at Capital University of Science and Technology (CUST), Islamabad, with a deep passion for tech innovation.</p>
