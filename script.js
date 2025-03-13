@@ -106,6 +106,6 @@ document.addEventListener('DOMContentLoaded', () => {
     commandInput.value = command; // Reflect command in input
     processCommand(command);
     commandInput.value = ''; // Clear input after execution
-    commandInput.focus(); // Keep input focused
+    // commandInput.focus(); // Keep input focused
   };
 });
