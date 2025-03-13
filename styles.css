@@ -8,6 +8,11 @@
 body {
   font-family: 'Courier New', monospace;
   background-color: #0a0a0a;
+  background: url('./back.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
   color: #00ff00;
   display: flex;
   justify-content: center;
@@ -225,4 +230,9 @@ body {
 
 .output::-webkit-scrollbar-track {
   background-color: #333;
+}
+
+/* Typing Animation Container */
+.typing-container {
+  display: block; /* Ensure it respects the CMD layout */
 }

@@ -14,9 +14,10 @@ document.addEventListener('DOMContentLoaded', () => {
   // Function to process commands
   function processCommand(command) {
     output.innerHTML = `<p>Muhammad Awais\\Portfolio> ${command}</p>`;
+    let response = '';
     switch (command) {
       case 'help':
-        output.innerHTML += `
+        response = `
                     <p>Available commands:</p>
                     <p>about - Show information about me</p>
                     <p>education - Display my education details</p>
@@ -27,7 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
         break;
 
       case 'about':
-        output.innerHTML += `
+        response = `
                     <p>MUHAMMAD AWAIS</p>
                     <p>Email: awais14940@gmail.com | Mobile: +923269872844</p>
                     <p>Residence: Rawalpindi, Pakistan</p>
@@ -40,7 +41,7 @@ document.addEventListener('DOMContentLoaded', () => {
         break;
 
       case 'education':
-        output.innerHTML += `
+        response = `
                     <p>EDUCATION</p>
                     <p>Capital University of Science and Technology</p>
                     <p>Bachelors in Computer Science (CGPA: 3.93/4)</p>
@@ -49,30 +50,44 @@ document.addEventListener('DOMContentLoaded', () => {
         break;
 
       case 'projects':
-        output.innerHTML += `
-            <p>PROJECTS</p>
-            <strong><p>A Secure Messaging Application | CipherChat | <a href="#" target="_blank">LINK</a></p></strong>
-            <p>May 2024 - June 2024</p>
-            <p>- Developed a secure messaging Android app with real-time messaging (<100ms response time).</p>
-            <p>- Integrated end-to-end encryption (RSA, AES, SHA-256) for 100% secure communication.</p>
-            <p>- Built with React Native and Firebase.</p>
-            <strong><p>Network Intrusion Detection System using ML | <a href="https://github.com/awais-124/intrusion-detection-using-ml" target="_blank">LINK</a></p></strong>
-            <p>December 2024</p>
-            <p>- Trained ML models (Logistic Regression, Random Forest, Gradient Boosting) for intrusion detection.</p>
-            <p>- Visualized results with confusion matrices and ROC curves.</p>
-            <strong><p>JobSpark - A Job Portal | <a href="https://github.com/awais-124/JobSpark---PHP-SQL" target="_blank">LINK</a></p></strong>
-            <p>- Built a web application to connect job seekers and employers with an intuitive interface.</p>
-            <p>- Features include job listings, user registration/login, employer module, and admin panel.</p>
-            <p>- Developed using PHP, MySQL, CSS, and JavaScript.</p>
-            <strong><p>Fine-Tuning DistillBERT for Sentiment Analysis | <a href="https://github.com/awais-124/fine-tuning-distilbert" target="_blank">LINK</a></p></strong>
-            <p>- Fine-tuned DistillBERT to classify airline tweets into positive, neutral, and negative sentiments.</p>
-            <p>- Included data preprocessing, tokenization, training, and evaluation with accuracy and F1-score metrics.</p>
-            <p>- Built with Python, TensorFlow, and Hugging Face Transformers.</p>
-        `;
+        response = `
+                <p>PROJECTS</p>
+                <br/>
+                <strong><p>1. A Secure Messaging Application | CipherChat | <a href="https://github.com/awais-124/react-native-chat-app" target="_blank">LINK</a></p></strong>
+                <p>May 2024 - June 2024</p>
+                <p>- Purpose: Built a secure, real-time messaging Android app to ensure private communication.</p>
+                <p>- Features: Real-time messaging with <100ms response time, end-to-end encryption using RSA, AES, and SHA-256 for 100% secure data transfer.</p>
+                <p>- Tech Stack: React Native, Firebase (for backend and real-time database).</p>
+                <p>- Outcome: Successfully tested with 50+ users, achieving zero security breaches and a smooth UI for encryption steps.</p>
+                <br/><br/>
+                <strong><p>2. Network Intrusion Detection System using ML | <a href="https://github.com/awais-124/intrusion-detection-using-ml" target="_blank">LINK</a></p></strong>
+                <p>December 2024</p>
+                <p>- Purpose: Developed an ML-based system to detect network intrusions as a semester project.</p>
+                <p>- Features: Preprocessed network data (handling duplicates, outliers), trained models like Logistic Regression, Random Forest, and Gradient Boosting.</p>
+                <p>- Evaluation: Visualized performance with confusion matrices and ROC curves, achieving high accuracy in identifying intrusions.</p>
+                <p>- Tech Stack: Python, Scikit-learn, Matplotlib, Pandas.</p>
+                <p>- Outcome: Presented findings with clear insights, demonstrating ML expertise.</p>
+                <br/><br/>
+                <strong><p>3. JobSpark - A Job Portal | <a href="https://github.com/awais-124/JobSpark---PHP-SQL" target="_blank">LINK</a></p></strong>
+                <p>Oct 2024 - January 2025</p>
+                <p>- Purpose: Created a web platform to connect job seekers and employers seamlessly.</p>
+                <p>- Features: Job listings, user registration/login, employer job posting module, admin panel for managing categories and users.</p>
+                <p>- Tech Stack: PHP, MySQL (database), CSS (styling), JavaScript (interactivity).</p>
+                <p>- Highlights: Intuitive UI with reusable components (e.g., navbars, modals), supported file uploads for resumes.</p>
+                <p>- Outcome: Fully functional portal with a structured backend, deployable via XAMPP.</p>
+                <br/><br/>
+                <strong><p>4. Fine-Tuning DistillBERT for Sentiment Analysis | <a href="https://github.com/awais-124/fine-tuning-distilbert" target="_blank">LINK</a></p></strong>
+                <p>January 2025</p>
+                <p>- Purpose: Fine-tuned DistillBERT to classify airline tweets into positive, neutral, and negative sentiments.</p>
+                <p>- Features: Data preprocessing (lowercase, removing columns), tokenization with DistilBertTokenizer, trained using TensorFlow.</p>
+                <p>- Evaluation: Measured accuracy, precision, recall, and F1-score; visualized word frequency with a Word Cloud.</p>
+                <p>- Tech Stack: Python, TensorFlow, Hugging Face Transformers, Pandas, NLTK, Matplotlib, Plotly.</p>
+                <p>- Outcome: Achieved robust sentiment classification, showcasing NLP and ML skills.</p>
+            `;
         break;
 
       case 'skills':
-        output.innerHTML += `
+        response = `
                     <p>SKILLS</p>
                     <p>Languages:</p>
                     <p>- JavaScript, C++, Python, SQL, PHP, Assembly</p>
@@ -92,13 +107,76 @@ document.addEventListener('DOMContentLoaded', () => {
         break;
 
       case 'clear':
-        output.innerHTML = `<p>Type a command or use the sidebar buttons.</p>`;
+        response = `<p>Type a command or use the sidebar buttons.</p>`;
         break;
 
       default:
-        output.innerHTML += `<p>'${command}' is not recognized as a command. Type 'help' or use the sidebar.</p>`;
+        response = `<p>'${command}' is not recognized as a command. Type 'help' or use the sidebar.</p>`;
     }
-    output.scrollTop = output.scrollHeight; // Auto-scroll to bottom
+    typeResponse(response); // Trigger typing animation
+  }
+
+  // Typing animation function with clickable links
+  function typeResponse(html) {
+    // Set the full HTML structure immediately
+    output.innerHTML += `<div class="typing-container">${html}</div>`;
+    const container = output.querySelector('.typing-container:last-child');
+    const elements = container.querySelectorAll('p, strong'); // Target all <p> and <strong>
+
+    elements.forEach((element, index) => {
+      // Store original HTML (including <a> tags)
+      const originalHTML = element.innerHTML;
+      element.innerHTML = ''; // Clear content for typing
+
+      // Extract text nodes and <a> tags separately
+      const tempDiv = document.createElement('div');
+      tempDiv.innerHTML = originalHTML;
+      const children = Array.from(tempDiv.childNodes);
+      let currentText = '';
+      let i = 0;
+      const speed = 20; // Fast typing speed (20ms per character)
+
+      const type = () => {
+        if (i < children.length) {
+          const node = children[i];
+          if (node.nodeType === Node.TEXT_NODE) {
+            // Type text content character-by-character
+            const text = node.textContent;
+            let j = 0;
+            const textInterval = setInterval(() => {
+              if (j < text.length) {
+                currentText += text.charAt(j);
+                element.innerHTML =
+                  currentText +
+                  children
+                    .slice(i + 1)
+                    .map((n) => n.outerHTML || n.textContent)
+                    .join('');
+                j++;
+                output.scrollTop = output.scrollHeight;
+              } else {
+                clearInterval(textInterval);
+                i++;
+                type(); // Move to next node
+              }
+            }, speed);
+          } else if (node.nodeType === Node.ELEMENT_NODE) {
+            // Append HTML elements (like <a>) instantly
+            currentText += node.outerHTML;
+            element.innerHTML =
+              currentText +
+              children
+                .slice(i + 1)
+                .map((n) => n.outerHTML || n.textContent)
+                .join('');
+            i++;
+            setTimeout(type, speed); // Small delay before next node
+          }
+        }
+      };
+      // Delay each element slightly for sequential typing
+      setTimeout(type, index * 200); // 200ms delay between elements
+    });
   }
 
   // Function for button clicks
@@ -106,6 +184,5 @@ document.addEventListener('DOMContentLoaded', () => {
     commandInput.value = command; // Reflect command in input
     processCommand(command);
     commandInput.value = ''; // Clear input after execution
-    // commandInput.focus(); // Keep input focused
   };
 });
