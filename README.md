@@ -1,4 +1,4 @@
-# Terminal Based Portfolio using Vanilla JS
+# Terminal Based Portfolio using JavaScript
 
 ### Full responsive portfolio
 
